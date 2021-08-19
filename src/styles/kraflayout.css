@@ -1,0 +1,21 @@
+.krafbody {
+  /* overflow: hidden; */
+  height: 100%;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15%;
+  overflow: hidden;
+  padding: 20% 0;
+}
+
+.footer {
+  height: 30vh;
+  border: 1px solid;
+  padding: 0 15%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

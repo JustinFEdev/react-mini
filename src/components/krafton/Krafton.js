@@ -1,12 +1,16 @@
 import React from "react";
 import KrafNav from "../../navigation/KrafNav";
-
+import KrafFooter from "./KrafFooter";
+import "../../App.css";
+import "../../styles/kraflayout.css";
 const Krafton = () => {
   return (
     <>
       <KrafNav />
-      <body>main</body>
-      <footer>asd</footer>
+      <div className="app">
+        <div className="krafbody">main</div>
+        <KrafFooter />
+      </div>
     </>
   );
 };

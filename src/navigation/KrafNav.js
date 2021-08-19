@@ -6,9 +6,19 @@ const KrafNav = () => {
     <>
       <header className="nav-layout">
         <div>
-          <a href="/">뒤로가기</a>
-          <div>Krafton</div>
+          <a href="/">
+            <div>Main Logo</div>
+          </a>
         </div>
+        <div>Krafton Logo</div>
+        <ul style={{ display: "flex" }}>
+          <li>About</li>
+          <li>Studios</li>
+          <li>Games</li>
+          <li>Careers</li>
+          <li>IR</li>
+          <li>News</li>
+        </ul>
       </header>
     </>
   );

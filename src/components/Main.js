@@ -47,45 +47,67 @@ const Main = () => {
         justifyContent: "space-between",
         alignItems: "center",
         height: "100%",
-        with: "100%",
         padding: "10%",
+        width: "auto",
       }}
     >
       {info.map((info) => (
-        <>
-          {/* <a style={{}} href={`${info.link}`}> */}
-          <div className="item_layout" onClick={() => setClick(!click)}>
-            <HoverVideoPlayer
-              videoSrc={info.video}
-              pausedOverlay={
-                <img
-                  src={info.img}
-                  alt={info.title}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                  }}
-                />
-              }
-              loadingOverlay={<div className="loading-spinner-overlay" />}
-            />
-          </div>
-          {/* </a> */}
-          {/* <h1
-            className={
-              info.id === 1
-                ? "item_text1"
-                : info.id === 2
-                ? "item_text2"
-                : info.id === 3
-                ? "item_text3"
-                : ""
-            }
-          >
-            {info.name}
-          </h1> */}
-        </>
+        <a
+          href={`${info.page}`}
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <>
+            {/* <a style={{}} href={`${info.link}`}> */}
+            <div className="item_layout" onClick={() => setClick(!click)}>
+              <HoverVideoPlayer
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                videoSrc={info.video}
+                pausedOverlay={
+                  <img
+                    src={info.img}
+                    alt={info.title}
+                    style={{
+                      width: "100%",
+                      height: 400,
+                    }}
+                  />
+                }
+                loadingOverlay={
+                  <div
+                    style={{
+                      width: "100%",
+                    }}
+                    className="loading-spinner-overlay"
+                  />
+                }
+              />
+            </div>
+            {/* <span style={{ position: "relative" }}>
+              <span
+                className={
+                  info.id === 1
+                    ? "item_text1"
+                    : info.id === 2
+                    ? "item_text2"
+                    : info.id === 3
+                    ? "item_text3"
+                    : ""
+                }
+              >
+                {info.name}
+              </span>
+            </span> */}
+          </>
+        </a>
       ))}
     </div>
     // </BrowserRouter>

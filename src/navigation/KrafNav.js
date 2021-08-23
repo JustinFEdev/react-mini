@@ -11,6 +11,8 @@ const KrafNav = () => {
       document.getElementById("navbar").style.top = "0";
     } else {
       document.getElementById("navbar").style.top = "-100px";
+      document.getElementById("navbar").style.backgroundColor =
+        "rgba(255,255,255,0.5)";
     }
     prevScrollpos = currentScrollPos;
   };

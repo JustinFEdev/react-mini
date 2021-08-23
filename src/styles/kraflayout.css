@@ -21,22 +21,64 @@
 
 .kraf-sectionLayout {
   height: 100vh;
-  border: 1px solid;
+  /* border: 1px solid; */
 }
-.kraf-sectionLayoutW {
+/* .kraf-sectionLayoutW {
   height: 100vh;
   border: 1px solid;
-  /* display: flex; */
   align-items: center;
   justify-content: center;
   background-color: #000;
-}
+} */
 .first {
   color: darkcyan;
 }
+
 .second {
   color: darkolivegreen;
 }
 .third {
   color: darkseagreen;
+}
+
+.first_img {
+  height: 26vh;
+  /* width: 5.5vw; */
+  width: 100%;
+  background-color: "ButtonHighlight";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.first_img:hover {
+  transform: scale(1.1);
+  transition: all 0.7s;
+  /* transition: all 0.5s ease-in-out; */
+}
+.second_img {
+  height: 26vh;
+  /* width: 5.5vw; */
+  width: 100%;
+  background-color: "ButtonHighlight";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.second_img:hover {
+  transform: scale(1.1);
+  transition: all 0.8s;
+}
+.third_img {
+  height: 26vh;
+  /* width: 5.5vw; */
+  width: 100%;
+  background-color: "ButtonHighlight";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+.third_img:hover {
+  transform: scale(1.1);
+  transition: all 0.8s;
 }

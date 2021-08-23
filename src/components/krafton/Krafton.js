@@ -7,39 +7,31 @@ import ncNews from "../../sources/images/NC_game_img.jpeg";
 import kakaoNews from "../../sources/images/kakao_game_img.jpeg";
 import nexonNews from "../../sources/images/v4_game_img.jpeg";
 
+// import "~slick-carousel/slick/slick.css";
+// import "~slick-carousel/slick/slick-theme.css";
+
 const Krafton = () => {
-  // const [dark, setDark] = useState(false);
-  // const listenScrollEvent = (e) => {
-  //   if (window.scrollY > 300) {
-  //     setDark({ color: "#000" });
-  //   } else {
-  //     setDark({ color: "#fff" });
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", listenScrollEvent);
-  //   return () => window.removeEventListener("scroll", listenScrollEvent);
-  // }, []);
-
   const newsInfo = [
     {
+      id: 1,
       img: ncNews,
       title: "게임개발부서 초특급 명작출시!",
       date: "21.03.21",
-      cssName: 1,
+      cssName: "ncCss",
     },
     {
+      id: 2,
       img: kakaoNews,
       title: "즐거운 게임! 수퍼트리와 함께!",
       date: "21.08.01",
-      cssName: 2,
+      cssName: "kakaoCss",
     },
     {
+      id: 3,
       img: nexonNews,
       title: "다양한 게임을 플레이하다 플레이댑!",
       date: "21.08.22",
-      cssName: 3,
+      cssName: "nexonCss",
     },
   ];
 
@@ -47,70 +39,6 @@ const Krafton = () => {
     { title: "People&Life", discription: "People&Life any words" },
     { title: "Recruit", discription: " Recruit any words" },
   ];
-
-  const newsComponent = (
-    <>
-      {newsInfo.map((info) => (
-        <div
-          className={
-            info.cssName ? 1 : "firstCss" ? 2 : "secondCss" ? 3 : "thirdCss"
-          }
-          style={{ width: "25vw", margin: "6% 1.2%" }}
-        >
-          <img
-            style={{
-              height: "26vh",
-              width: "25.5vw",
-              backgroundColor: "ButtonHighlight",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-            src={info.img}
-            alt="infos"
-          />
-          <h1
-            style={{
-              minHeight: 50,
-              padding: "20px 0",
-            }}
-          >
-            {info.title}
-          </h1>
-          <div style={{ fontSize: 15 }}>{info.date}</div>
-        </div>
-      ))}
-    </>
-  );
-  const careerComponent = (
-    <>
-      {careerInfo.map((info) => (
-        <div style={{ width: "50%", margin: "6% 1.2%", border: "1px solid" }}>
-          <div
-            style={{
-              height: "26vh",
-              backgroundColor: "ButtonHighlight",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            {info.img}
-          </div>
-          <h1
-            style={{
-              minHeight: 36,
-              padding: "10px 0 5px 0",
-            }}
-          >
-            {info.title}
-          </h1>
-          <div style={{ fontSize: 15 }}>{info.discription}</div>
-          <button>move to this page</button>
-        </div>
-      ))}
-    </>
-  );
 
   return (
     <>
@@ -127,15 +55,29 @@ const Krafton = () => {
             }}
             id="section_01"
           >
-            <h1 style={{ fontSize: 80 }}>여기는 게임개발센터</h1>
+            <h1 style={{ fontSize: 80 }}>여기는 게임개발센터.</h1>
           </section>
-          <section className="kraf-sectionLayout" id="section_02">
-            Section three area
+          <section
+            className="kraf-sectionLayout"
+            id="section_02"
+            style={{ height: "65vh", padding: "0 10%" }}
+          >
+            <div
+              style={{
+                position: "relative",
+                height: "50%",
+              }}
+            >
+              <h1 style={{ fontSize: 40 }}>Our Games</h1>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                {/* {newsComponent} */}
+              </div>
+            </div>
           </section>
           <section
             className="kraf-sectionLayout"
             id="section_03"
-            style={{ height: "120vh" }}
+            style={{ height: "120vh", padding: "0 10%" }}
           >
             <div
               style={{
@@ -145,7 +87,51 @@ const Krafton = () => {
             >
               <h1 style={{ fontSize: 40 }}>News zone</h1>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                {newsComponent}
+                {newsInfo.map((info) => (
+                  <div
+                    className={
+                      info.cssName === "ncCss" ? (
+                        "first"
+                      ) : info.cssName === "kakaoCss" ? (
+                        "second"
+                      ) : info.cssName === "nexonCss" ? (
+                        "third"
+                      ) : (
+                        <></>
+                      )
+                    }
+                    style={{
+                      width: "25vw",
+                      margin: "6% 1.2%",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <img
+                      className={
+                        info.cssName === "ncCss" ? (
+                          "first_img"
+                        ) : info.cssName === "kakaoCss" ? (
+                          "second_img"
+                        ) : info.cssName === "nexonCss" ? (
+                          "third_img"
+                        ) : (
+                          <></>
+                        )
+                      }
+                      src={info.img}
+                      alt="infos"
+                    />
+                    <h1
+                      style={{
+                        minHeight: 50,
+                        padding: "20px 0",
+                      }}
+                    >
+                      {info.title}
+                    </h1>
+                    <div style={{ fontSize: 15 }}>{info.date}</div>
+                  </div>
+                ))}
               </div>
             </div>
             <div
@@ -156,7 +142,36 @@ const Krafton = () => {
             >
               <h1 style={{ fontSize: 40 }}>Careers zone</h1>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                {careerComponent}
+                {careerInfo.map((info) => (
+                  <div
+                    style={{
+                      width: "44%",
+                      margin: "6% 1.2%",
+                    }}
+                  >
+                    <div
+                      style={{
+                        height: "26vh",
+                        backgroundColor: "ButtonHighlight",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      {info.img}
+                    </div>
+                    <h1
+                      style={{
+                        minHeight: 36,
+                        padding: "10px 0 5px 0",
+                      }}
+                    >
+                      {info.title}
+                    </h1>
+                    <div style={{ fontSize: 15 }}>{info.discription}</div>
+                    <button>move to this page</button>
+                  </div>
+                ))}
               </div>
             </div>
           </section>

@@ -24,10 +24,10 @@ const KrafNav = () => {
         </a>
         <ul style={{ display: "flex" }}>
           <li>About</li>
-          <li>Studios</li>
+          <li>Market</li>
+          <li>Inven</li>
           <li>Games</li>
           <li>Careers</li>
-          <li>IR</li>
           <li>News</li>
         </ul>
         <img

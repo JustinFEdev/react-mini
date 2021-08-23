@@ -63,6 +63,7 @@ const Main = () => {
             {/* <a style={{}} href={`${info.link}`}> */}
             <div className="item_layout" onClick={() => setClick(!click)}>
               <HoverVideoPlayer
+                sizingMode="container"
                 style={{
                   width: "100%",
                   height: "100%",
@@ -85,6 +86,7 @@ const Main = () => {
                   <div
                     style={{
                       width: "100%",
+                      objectFit: "cover",
                     }}
                     className="loading-spinner-overlay"
                   />

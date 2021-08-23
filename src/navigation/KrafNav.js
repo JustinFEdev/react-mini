@@ -1,16 +1,27 @@
 import React from "react";
 import "../styles/navi.css";
+import superTree from "../sources/images/supertree_logo.png";
+import krafton from "../sources/images/krafton_logo.png";
 
 const KrafNav = () => {
+  let prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-100px";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
   return (
     <>
-      <header className="nav-layout">
-        <div>
-          <a href="/">
-            <div>Main Logo</div>
-          </a>
-        </div>
-        <div>Krafton Logo</div>
+      <nav id="navbar" className="nav-layout">
+        {/* className={`nav-layout ${dropDown && "nav-change"}`} */}
+        <a href="/">
+          <img src={superTree} style={{ width: 180 }} alt="supertree" />
+        </a>
         <ul style={{ display: "flex" }}>
           <li>About</li>
           <li>Studios</li>
@@ -19,7 +30,14 @@ const KrafNav = () => {
           <li>IR</li>
           <li>News</li>
         </ul>
-      </header>
+        <img
+          style={{
+            width: 150,
+          }}
+          src={krafton}
+          alt="krafton_logo"
+        />
+      </nav>
     </>
   );
 };

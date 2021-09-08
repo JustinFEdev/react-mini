@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import KrafNav from "../../navigation/KrafNav";
 import KrafFooter from "./KrafFooter";
 import "../../App.css";
@@ -6,11 +6,21 @@ import "../../styles/kraflayout.css";
 import ncNews from "../../sources/images/NC_game_img.jpeg";
 import kakaoNews from "../../sources/images/kakao_game_img.jpeg";
 import nexonNews from "../../sources/images/v4_game_img.jpeg";
+// import styled from "styled-components";
 
 // import "~slick-carousel/slick/slick.css";
 // import "~slick-carousel/slick/slick-theme.css";
 
 const Krafton = () => {
+  // const [dark, setDark] = useState(false);
+  // const [theme, setTheme] = useState("light");
+
+  // const themeToggler = () => {
+  //   theme === "light" ? setTheme("dark") : setTheme("light");
+  //   console.log("theme 모드 설정");
+  //   console.log(theme);
+  // };
+
   const newsInfo = [
     {
       id: 1,
@@ -42,9 +52,10 @@ const Krafton = () => {
 
   return (
     <>
-      <KrafNav />
       <div className="app">
         <div className="krafbody">
+          {/* <KrafNav onClick={() => themeToggler()} /> */}
+
           {/* <div style={{ height: 350, border: "1px solid" }}>Banner Area</div> */}
           <section
             className="kraf-sectionLayout"
@@ -55,13 +66,33 @@ const Krafton = () => {
             }}
             id="section_01"
           >
-            <h1 style={{ fontSize: 80 }}>여기는 게임개발센터.</h1>
+            <div style={{ textAlign: "center" }}>
+              {/* <div
+                style={{
+                  border: "1px solid",
+                  height: 100,
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <div
+                  onClick={() => themeToggler()}
+                  style={{
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    cursor: "pointer",
+                    fontSize: 30,
+                    fontWeight: 800,
+                  }}
+                >
+                  {props.theme === "ligt" ? "Dark Mode" : "Light Mode"}
+                </div>
+              </div> */}
+              <h1 style={{ fontSize: 80 }}>여기는 게임개발센터.</h1>
+            </div>
           </section>
-          <section
-            className="kraf-sectionLayout"
-            id="section_02"
-            style={{ height: "65vh", padding: "0 10%" }}
-          >
+          <section className="kraf-sectionLayout" id="section_02" style={{ height: "65vh", padding: "0 10%" }}>
             <div
               style={{
                 position: "relative",
@@ -69,16 +100,10 @@ const Krafton = () => {
               }}
             >
               <h1 style={{ fontSize: 40 }}>Our Games</h1>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                {/* {newsComponent} */}
-              </div>
+              <div style={{ display: "flex", justifyContent: "center" }}>{/* {newsComponent} */}</div>
             </div>
           </section>
-          <section
-            className="kraf-sectionLayout"
-            id="section_03"
-            style={{ height: "120vh", padding: "0 10%" }}
-          >
+          <section className="kraf-sectionLayout" id="section_03" style={{ height: "120vh", padding: "0 10%" }}>
             <div
               style={{
                 position: "relative",

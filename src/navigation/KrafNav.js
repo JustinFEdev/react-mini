@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/navi.css";
 import superTree from "../sources/images/supertree_logo.png";
 import krafton from "../sources/images/krafton_logo.png";
 
-const KrafNav = () => {
+const KrafNav = ({ onClick, theme }) => {
   let prevScrollpos = window.pageYOffset;
   window.onscroll = function () {
     let currentScrollPos = window.pageYOffset;
@@ -11,8 +11,7 @@ const KrafNav = () => {
       document.getElementById("navbar").style.top = "0";
     } else {
       document.getElementById("navbar").style.top = "-100px";
-      document.getElementById("navbar").style.backgroundColor =
-        "rgba(255,255,255,0.5)";
+      document.getElementById("navbar").style.backgroundColor = "rgba(255,255,255,0.5)";
     }
     prevScrollpos = currentScrollPos;
   };
@@ -32,13 +31,14 @@ const KrafNav = () => {
           <li>Careers</li>
           <li>News</li>
         </ul>
-        <img
+        {/* <img
           style={{
             width: 150,
           }}
           src={krafton}
           alt="krafton_logo"
-        />
+        /> */}
+        <button onClick={onClick}>{theme === "light" ? "Dark Mode" : "Light Mode"}</button>
       </nav>
     </>
   );
